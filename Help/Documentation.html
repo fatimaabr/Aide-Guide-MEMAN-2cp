@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<title>Documentation</title>
+<link rel="shortcut icon" href="favicon.png" type="image/png" >
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="helpcss.css">
+</head>
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="accueil.html" class="w3-bar-item w3-button w3-theme-l1" >Help</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  
+  <a class="w3-bar-item w3-button w3-hover-black" href="accueil.html">Acceuil</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="Documentation.html">Documentation </a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="GuideD'util.html">Guide d'utilisation </a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="Astuces&Raccourcis.html">Astuces et Raccourcis </a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="Tutoriels.html">Tutoriels</a>
+  
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+
+<div class="w3-main" style="margin-left:250px">
+   
+  <div class="w3-row w3-padding-64"> 
+    <div class="w3-twothird w3-container">
+      <div id="haut">
+          <h1 class="w3-text-teal">Gestion de la memoire</h1> 
+      </div>
+         
+      <ul> 
+          
+          <li> <a href="#mf"><font color=#2E8B57>Memoire centrale</font></a></li>
+              <ul>
+                <li><a href="#pf"><font color=#2E8B57>Partition fixe</font></a></li>
+                    <ul>
+                      <li><a href="#monomulti"><font color=#2E8B57>MonoFile MultiFiles</font></a></li>
+                      <li><a href="#vavient"><font color=#2E8B57>Le va-et-vient</font></a></li>
+                    </ul>
+                <li><a href="#pv"><font color=#2E8B57>Partition variable</font></a></li>
+              </ul>
+         
+          <li><a href="#mv"><font color=#2E8B57 >Memoire virtuelle</font></a></li>
+               <ul>
+                   <li><a href="#pg"><font color=#2E8B57 >La pagination</font></a></li> 
+                       <ul>
+                           <li><a href="#tb"><font color=#2E8B57 >La structure de la table de page</font></a></li> 
+                           <li><a href="#mmu"><font color=#2E8B57 >Traduction des adresses virtuelles en adresses réelles (MMU) </font></a></li>
+                           <li><a href="#dp"><font color=#2E8B57 >Defauts de page</font></a></li>
+                           <li><a href="#remp"><font color=#2E8B57 >Algorithmes de remplacement</font></a></li> 
+                               <ol>
+                                    <li><a href="#remp"><font color=#2E8B57 >FIFO (first in first out)</font></a></li>
+                                    <li><a href="remp"><font color=#2E8B57 >LRU (least recently used)</font></a></li>
+                                    <li><a href="remp"><font color=#2E8B57 >NFU/LFU (least frequently used)</font></a></li>
+                                    <li><a href="remp"><font color=#2E8B57 >Aging(LFU modification)</font></a></li>
+                               </ol>
+                      </ul>
+      
+                </ul>
+       </ul>
+         
+        <div id="mf">
+            <h2> La Mémoire centrale </h2>
+        </div>
+        <div id="pf">
+            <h2>Partition fixe</h2>
+            <p>Dans un système à partitions fixes, la mémoire est partagée de manière statique en un nombre fixe de zones ou partitions.
+
+                Les tailles et les adresses début de ces partitions sont définies lors de la « génération de système » ou bien par l’opérateur, au moment du chargement du système. </br>
+                
+                 • Cette technique permet la coexistence de plusieurs programmes en mémoire centrale. <strong> meilleure utilisation du processeur central et de la mémoire principale</strong>.</br>
+                
+                 • Pendant son exécution un programme ne doit pas accéder en dehors de sa partition.</br>
+                
+                
+                </p>
+                <img src="mf.png" class="center" alt="">    
+               <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+        </div> 
+        <div id="monomulti">
+          <h3>MonoFile MultiFiles</h3>  
+          <p> Un  aspect important est celui de la gestion des requêtes de la mémoire. Il peut y avoir une file unique qui stocke toutes les requêtes pour toutes les partitions ou bien une file pour chaque partition. </br>
+          </br> Dans cette partie L’ordonnancement des processus sont est réaliser par deux méthodes: </br>
+             <strong>• file d'attente commune:</strong> </br>
+             <img src="pf.png" class="center" alt="">             
+              pour ce cas il existe 3 méthodes pour le choix de la partition pour un processus : </br>
+              
+                    <strong>- First Fit: </strong>on alloue au processus choisi la première partition dont la taille est supérieure ou égale à la taille du processus. <a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a></br>
+              
+                    <strong>- Best Fit : </strong> on alloue au processus choisi la meilleure partition (en terme de taille ) dont la taille est supérieure ou égale à la taille du processus.<a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a></br>
+              
+                    <strong>- Worst Fit : </strong> on alloue au processus choisi la Pire partition (en terme de taille ) dont la taille est supérieure ou égale à la taille du processus.<a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a></br>
+              
+            <strong> Inconvénients: </strong>  Fragmentation interne et externe. </br>
+              
+              
+              
+             <strong>• files d'attente séparées:</strong> </br>
+             <img src="pff.png" class="center" alt=""> 
+              Dans ce cas, a chaque partition de la mémoire on associe une file qui contiendra les processus qui auront une taille proche a celle de la partition, et chaque processus est inséré dans la file de la partition dont la taille est la plus proche (supérieure ou égale) de la taille demandée. </br>
+              
+             <strong> Inconvénients:</strong> Fragmentation interne et on peut trouver des files vides alors que d'autres files contiennent beaucoup de processus en attente. </br>
+              </p>
+              <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+        </div>
+        <div id="vavient">
+            <h3>Le va-et-vient</h3>
+            <p>
+                Avec les systèmes à temps partagés, la mémoire ne peut pas contenir l’ensemble des processus de tous les utilisateurs, il faut donc placer quelques processus sur le disque et les ramener en MC avant 
+
+                de les exécuter. Ce mouvement entre la MC et le disque est appelé va-et -vient. </br>
+                <img src="vv.png" class="center" alt="">                                                                                         
+              •réservation du swap ( ou mémoire de réservation ou swap era) quand il y a  une demande (même chose pour la mémoire centrale ) </br>
+              •la zone va être alloue au début de l’exécution </br>
+              •lors du chargement, le processus a une zone d'attente libre en  M.S ( pour éviter l'interblocage ) </br>
+              •swap-in (allocation en MC) </br>
+              •swap-out (libération) " le processus est terminé ou bloqué ) </br>
+              •le choix des tailles des partition de être de telle sorte a ce que n  ≥ m ("n" est la taille du processus et "m" la taille de la partition ) </br>
+              •on cherche toutes les zones libres avant de choisir la meilleure partition. </br> 
+              •on choisie une partition de telle sorte qu'elle minimise la fragmentation interne ( fragmentation interne =taille partition- taille processus=m-n) </br>               
+            </p>
+            <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+        </div>
+        <div id="pv">
+           <h2>Partition variable</h2>
+           <p>
+              - comme le nom l'indique,dans cette méthode on alloue des partition variable en fonctions des tailles des processus. son but est de <strong>minimiser ou éliminer la fragmentation interne.</strong> </br> 
+
+              - chaque partition est définie par sa taille et son adresse. </br>
+              
+              -Au début, toute la mémoire est constituée d’une seule partition,puis elle est fractionnée au fur et à mesure de l’exécution des processus. </br>
+            </p>
+              <h3>•Allocation d'une partition: </h3> 
+             <p>
+              L’allocation d’une partition  à un processus, consiste à trouver une zone de taille convenable(une taille supérieure ou égale à la taille du processus )  parmi les zones libres.  </br>
+              
+              - si la taille de la partition sélectionnée est trop grande elle est divisé en deux partition, la première est allouée pour le processus et la deuxième est ajouté a la liste des zones libres.  </br>              
+              </p>
+            <h3>•Libération d’une partition:</h3>
+              <p>            
+              - Quand un processus se termine, il libère sa partition qui est de nouveau placée dans la « liste » des zones libres. </br>
+              
+              - Fusionner les partitions chaque fois que cela est possible ( la fusion consiste a Créer à partir de plusieurs partitions contiguës, une seule partition de grande taille) </br>
+              <img src="v.png" class="center" alt="">       
+             <h2> <strong> • Algorithmes de sélection d’une partition:</strong></h2> 
+              
+              
+              
+             <strong> ◦ First-fit : </strong> Choisir la première partition dont la taille est suffisamment grande (taille de la partition choisie >= taille demandée). La recherche s’arrête dés que l’on trouve une partition libre de taille assez grande.<a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a> </br>
+             <img src="vvv.png" class="center" alt="">          
+            <strong>◦ Best-fit :</strong>   Choisir la partition dont la taille est la plus proche de la taille demandée. <a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a></br>
+            <img src="kk.png" class="center" alt="">                                                                      
+             <strong>◦ Worst-fit:</strong>  Choisir la plus grande partition libre. <a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a></br>
+             <img src="k.png" class="center" alt="">              
+             <strong>◦ Algorithme Buddy system ou système de compagnons: </strong>  </br>
+              
+              
+              
+              
+                               - Les tailles des partitions (zones ou blocs) mémoires sont des puissances de 2 </br>
+              
+                              - La taille d’une partition demandée doit être arrondie à la puissance de 2 </br>
+              
+           </p>
+           <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+        </div>
+       <div id="mv">
+          <h2> La Mémoire Virtuelle </h2>
+          <p>
+              La  mémoire virtuelle est une technique qui permet d’exécuter des programmes dont la taille excède la taille de la mémoire réelle,
+              avec des techniques adéquates(citée ci-après) .Sa taille peut être très supérieure à celle de la mémoire physique ou réelle. 
+              Considérons un ensemble de programmes s’exécutant « simultanément » sur un ordinateur quelconque. La mémoire totale requise par 
+              l’ensemble des programmes peut être bien plus grande que la quantité de mémoire physique disponible sur la machine, 
+              mais seule une fraction de cette mémoire est utilisée de manière active à chaque instant donné. <strong>La mémoire principale n’a donc besoin
+                  de contenir que les parties actives des programmes. </strong> 
+          </p>
+          
+          <a href="http://zupimages.net/viewer.php?id=19/19/nzsz.png"><img src="https://zupimages.net/up/19/19/nzsz.png" class="center" alt=""  height="35%" width="35%"/></a>
+          <p>
+          En général, la mémoire virtuelle et la mémoire physique sont structurées en unités d’allocations (pages pour la mémoire virtuelle et cases pour la mémoire physique).
+           La taille d’une page est égale à celle d’une case. Lorsqu’un processus est en cours d’exécution, seule une partie de son espace d’adressage est en mémoire.
+           Les adresses virtuelles référencées par l’instruction en cours doivent être traduites en adresses physiques.
+           Cette conversion d’adresse est effectuée par des circuits matériels de gestion. Si cette adresse correspond à une adresse en
+           mémoire physique, on transmet sur le bus l’adresse réelle, sinon il se produit <strong>un défaut de page.</strong> <br/> <br/>
+    
+           Par exemple, si la mémoire physique est de <strong>32 Ko </strong> et l’adressage est codé sur <strong>16 bits</strong> , l’espace d’adressage logique peut atteindre la taille <strong> (2^16)</strong>  
+           soit <strong> 64 Ko</strong>. L’espace d’adressage est structuré en un ensemble d’unités appelées pages ou segments, qui peuvent être chargées séparément
+           en mémoire.
+          </p>
+        
+         
+        <a href="http://zupimages.net/viewer.php?id=19/19/epjd.gif"><img src="https://zupimages.net/up/19/19/epjd.gif" alt="" /></a> <br/>
+        <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+      </div>
+    
+      <div id="pg">
+       <h2> <font color=#2E8B57 >La pagination</font>  </h2>
+       <h4>principe de base :</h4>
+       <p>
+          ►    La mémoire physique est divisée en petites unités appelées cases de pages <br/>
+          ►    La mémoire virtuelle est divisée en unités de même taille, appelées pages <br/>
+          ►    Lorsqu’un programme tente d’accéder à une page dans la mémoire virtuelle, le MMU (memory management unit) fait 
+                correspondre celle-ci au case de page correspondante, dans la mémoire physique. <br/>
+       </p>
+       
+          <a href="http://zupimages.net/viewer.php?id=19/19/g3b6.jpg"><img src="https://zupimages.net/up/19/19/g3b6.jpg" alt="" /></a>
+    
+       <p>Lorsque le processus dont l’espace virtuel est illustré tente d’accéder à l’adresse virtuelle 0, il fait référence à la page 0; celle-ci correspond au cadre de page 2, dans la mémoire physique, soit celui aux adresses entre 8 Ko et 12 Ko.
+          On conserve la correspondance entre les pages et les cases de pages dans une table appelée table des pages (« page table »).
+          Dans la plupart des OS modernes, la mémoire virtuelle et la mémoire physique sont divisées logiquement en pages de quelques kilo-octets (1, 2 ou 4 ko généralement). Dans la plupart des ordinateurs, la dimension de la page est fixée à 4 k.
+          La correspondance de taille est donc parfaite puisque la mémoire virtuelle et la mémoire physique ont des pages de dimension identique.</p>
+          <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+        </div>
+      <div id="tb">
+          <h3> <font color=#2E8B57 >La structure de la table de page</font>  </h3>
+        <p>La table des pages est la structure de données utilisée pour stocker les correspondances entre adresses virtuelles et adresses physiques. <br/>
+          <a href="http://zupimages.net/viewer.php?id=19/19/4ypj.png"><img src="https://zupimages.net/up/19/19/4ypj.png" class="center" alt="" /></a>
+            Chaque entrée de la Table de pages est composée de plusieurs champs, notamment : <br/>
+             1. Le bit de présence. <br/>
+             2. Le bit de référence (R). <br/>
+             3. Les bits de protection.<br/>
+             4. Le bit de modification (M).<br/>
+             5. Le numéro de case correspondant à la page. <br/> <br/>
+         </p>
+         <p> 
+           ► L’adresse générée par la CPU est divisée en 2 parties: <br/>
+            1. <strong> Numéro de page </strong>(Page number) p: Indice de la table de pages laquelle contient l’adresse de base pour chaque page.<br/>
+            2. <strong>Déplacement dans la page</strong>  (Offset) d: Combiné avec l’adresse de base définit l’adresse physique qui est envoyée à l’unité de mémoire.<br/>
+     ► Le rôle d’une table de pages est de faire correspondre des pages virtuelles à des cadres de pages.<br/>
+     ► Mathématiquement, une table des pages est une fonction, qui a comme argument le numéro de la page virtuelle et comme résultat le numéro du cadre physique.</p>
+     <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+    </div>
+      <div id="mmu">
+          <h3> <font color=#2E8B57 >Traduction des adresses virtuelles en adresses réelles (MMU)</font>  </h3>
+          <p>Le rôle principal du <strong>MMU </strong> (memory managment unit) est de traduire toute adresse virtuelle en une adresse physique.</p>
+          <a href="http://zupimages.net/viewer.php?id=19/19/3grw.png"><img src="https://zupimages.net/up/19/19/3grw.png" alt="" /></a>
+          <p>► L’adresse virtuelle est un couple composé de n° de la page et d’un déplacement relatif  au début de la page. <br/>
+	
+              ► L’adresse réelle est un couple composé d’un n° de la case et d’un déplacement au sein de la case.<br/>
+        
+              ► La correspondance entre les pages et les cases est mémorisée dans une table appelée Table des pages. Le nombre d’entrées (éléments) dans cette table est égale au nombre de pages virtuelles. <br/>
+              ► A chaque page virtuelle présente correspond une case en MC. <br/> </p>
+              <a href="http://zupimages.net/viewer.php?id=19/19/9l2n.png"><img src="https://zupimages.net/up/19/19/9l2n.png" alt="" /></a>
+              <p> <strong>Fonctionnement d’un MMU </strong> <br/>
+
+                  Le MMU reçoit, en entrée une adresse virtuelle et envoie en sortie l’adresse physique ou provoque un déroutement.. 
+                  Le SE maintient une copie de la table de pages pour processus, qui permet d’effectuer la traslation des adresses. </p>
+                  <a href="https://www.google.com"><font color=#2E8B57 >voir la simulation</font></a>
+                  <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+                </div>
+        <div id="dp">
+            <h3> <font color=#2E8B57 >Defauts de page</font>  </h3>
+            <img src="blank.png" class="center" alt=""> <!-- screenshot from the software -->
+            <ol>
+             <li>Lorsque l’adresse virtuelle référence une page <strong>non présente en MC</strong> . Le mécanisme d’adressage (MMU) génère <strong>un défaut de page </strong>(déroutement).</li>  
+             <li> Trouver un case de page libre. </li>
+             <li> “Swap” la page dans la case.</li>  
+             <li> <strong>Si la MC est pleine</strong> : </li>
+            </ol>
+            <ul>
+              <li>Virer de la MC une page (pour un remplacement) .</li>
+              <ul>
+                <li>Choisir une page victime, en fonction des algorithmes.</li>
+                <li>Si elle est modifiée, il faut la réécrire.</li>
+              </ul>
+              <li>Charger la page référencée en MC (placement) .</li>
+              <li>Modifier les indicateurs de Présence et de Référence dans la table de pages.</li>
+            </ul>    
+            <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>      
+          </div>
+        <div id="remp">
+            <h3> <font color=#2E8B57 >Algorithme de remplacement de page</font>  </h3>
+            <p>A la suite d’un <strong>défaut de page</strong> , le système d’exploitation doit ramener en mémoire la page manquante 
+              à partir du disque. S’il n’y a pas de cases libres en mémoire, il doit retirer une page de la mémoire 
+              pour la remplacer par celle demandée. Si la page à retirer a été modifiée depuis son chargement en mémoire, il faut la réécrire
+               sur le disque. <br/>
+              </p>
+              <p>
+                ► Quelle est la page à retirer de manière à minimiser le nombre de défauts de page ? <br/>
+              </p>
+              <p>Plusieurs algorithmes proposés sont basés sur les références passées des pages, ceci pour éviter de sélectionner une très 
+                demandée, alors qu’il soit très probable qu’il faille la ramener rapidement en MC, ce qui entraîne une perte de temps inutile.
+                Parmi les Algorithmes de remplacement de page :</p>
+                <ol>
+                  <li> <strong>FIFO</strong> (First In First Out): La page la plus ancienne est la victime (celle qui a été placé en mémoire depuis le plus long temps). <a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a> </li>
+                  <li> <strong>LRU</strong> (Least Recently Used): Il consiste à choisir comme victime le cadre qui n'a pas été référencé depuis le plus longtemps.  <a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a></li>
+                  <li> <strong>LFU/NFU</strong> (Least/Not Frequently Used ): on garde un compteur qui est incrémenté à chaque fois que la page est référencé, et la victime sera la page dont le compteur est le plus bas  <a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a></li>
+                  <li> <strong>Aging</strong> (LFU modification) : C’est une amélioration le l'algorithme LFU, en procédant par :
+                    <ul>
+                      <li>insertion du bit de référence R à droite.</li>
+                      <li>décalage du compteur </li>
+                    </ul>
+                    
+                    <a href="https://www.google.com"><font color=#2E8B57 >Simuler</font></a></li>
+                </ol>
+                <a href="#haut"><font color=#2E8B57>Haut de la page</font></a>
+              </div>
+    </div>  
+  </div>
+
+  <!-- Pagination 
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="#">1</a>
+      <a class="w3-button w3-hover-black" href="#">2</a>
+      <a class="w3-button w3-hover-black" href="#">3</a>
+      <a class="w3-button w3-hover-black" href="#">4</a>
+      <a class="w3-button w3-hover-black" href="#">5</a>
+      <a class="w3-button w3-hover-black" href="#">»</a>
+    </div>
+  </div>-->
+
+  <!-- Footer -->
+   <!-- Site foote r -->
+   <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6 class="txt">About</h6>
+          <p class="txt"> <i> Simulateur visuelle des techniques de la gestion de la mémoire centrale par un système d’exploitation. </i></p>
+        </div>
+        <h4 class="txt">ECOLE NATIONALE SUPERIEURE D'INFORMATIQUE (ESI)-OUED-ESMAR-ALGER-ALGERIE</h4>
+         
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text" align ="center">Copyright &copy; 2019 All Rights Reserved 
+   
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
